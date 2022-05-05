@@ -11,6 +11,7 @@
         <title>Shop - CatShop</title>
     </head>
     <body>
+        <div class="fader"></div>
         <header>
             <a class="header" href="index.html">
                 <img src="assets/img/headercat_dark.png">
@@ -44,7 +45,7 @@
 
     <!-- Handlebars template for product -->
     <script id="product-template" type="text/x-handlebars-template">
-        <div class="product">
+        <div class="product" id="{{id}}">
             <img src="assets/img/products/{{id}}.png">
             <div class="split">
                 <div class="text">

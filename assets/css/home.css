@@ -9,15 +9,21 @@
     align-items: center;
     justify-content: center;
     color: var(--foreground-bright);
+    animation-name: bgFadeIn;
+    animation-duration: 1s;
 }
 .banner h1 {
     font-family: 'Spectral', serif;
     font-size: 75px;
     margin-bottom: 40px;
+    animation-name: mainFadeIn;
+    animation-duration: 1s;
 }
 .banner h3 {
     font-size: 25px;
     margin-bottom: 10px;
+    animation-name: mainFadeIn;
+    animation-duration: 1s;
 }
 .banner button {
     padding: 13px 20px;
@@ -28,9 +34,21 @@
     font-size: 17px;
     transition: .4s;
     border-radius: 10px;
+    animation-name: mainFadeIn;
+    animation-duration: 1s;
 }
 .banner button:hover {
     background: var(--foreground-bright-alt);
     cursor: pointer;
     transition: .3s;
+}
+
+/* Animations */
+@keyframes mainFadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bgFadeIn {
+    from { background-size: 110%; }
+    to { background-size: 100%; }
 }

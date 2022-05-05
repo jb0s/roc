@@ -11,17 +11,33 @@
     display: flex;
     align-items: center;
     gap: 40px;
+    animation-name: sectionFadeIn;
+    animation-duration: 1s;
 }
 .section img {
     width: 200px;
     height: 200px;
+    animation-name: sectionElementFadeIn;
+    animation-duration: 2s;
 }
 .section p {
     width: 410px;
+    animation-name: sectionElementFadeIn;
+    animation-duration: 2s;
 }
 
 /* Hyperlink to GitHub source code (hi!) */
 p a {
     color: var(--foreground);
     text-decoration: underline;
+}
+
+/* Animations */
+@keyframes sectionFadeIn {
+    from { opacity: 0; transform: translateY(-80px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes sectionElementFadeIn {
+    from { transform: scale(.8); }
+    to { transform: scale(1); }
 }

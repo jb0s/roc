@@ -120,3 +120,20 @@ footer {
 footer i {
     margin: 0 7px;
 }
+
+/* Fade transition */
+.fader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    opacity: 0;
+    pointer-events: none;
+    animation-name: fader;
+    animation-duration: 1s;
+    z-index: 9000;
+}
+@keyframes fader {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

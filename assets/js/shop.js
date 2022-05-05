@@ -18,15 +18,20 @@ function populateShop() {
     // Remove the error message that is displayed in place of an empty catalog
     document.querySelector(".catalog-empty").remove();
 
+    var duration = 0;
     productData.forEach(product => {
+        
         // Hackily set the icon manually, I'm so good
         product.icon = window.__SHOPPING_CART__.items.includes(product.id) ? "fa-circle-check" : "fa-cart-plus";
-
+        
         var html = templateScript(product);
         var element = document.createElement("div");
         element.innerHTML = html;
-
+        
         document.querySelector(".products").appendChild(element);
+
+        duration += 60;
+        animateTile(product.id, duration);
     });
 }
 
@@ -41,4 +46,14 @@ function toggleCart(button, itemId) {
         button.firstChild.classList.remove("fa-cart-plus");
         button.firstChild.classList.add("fa-circle-check");
     }
+}
+
+function animateTile(id, wait) {
+    var tile = document.getElementById(id);
+
+    tile.style.opacity = 0;
+    setTimeout(() => {
+        tile.style.opacity = 1;
+        tile.style.animationName = "shopProductFadeIn";
+    }, wait);
 }

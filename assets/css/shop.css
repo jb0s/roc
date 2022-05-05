@@ -12,6 +12,7 @@
     flex-direction: column;
     padding: 20px;
     border-radius: 10px;
+    animation-duration: 1s;
 }
 .product img {
     border-radius: 10px;
@@ -59,4 +60,10 @@
 .catalog-empty h3 {
     margin-top: 10px;
     font-size: 15px;
+}
+
+/* Animations */
+@keyframes shopProductFadeIn {
+    from { transform: scale(.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
