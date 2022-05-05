@@ -1,7 +1,7 @@
 var productData = [];
 
 console.log("fetching catalog");
-fetch('https://roc-api.jake.how/shop/catalog')
+fetch('https://rocapi.jake.how/shop/catalog')
     .then(response => response.json())
     .then(data => productData = data)
     .finally(() => populateShop());
