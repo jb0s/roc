@@ -1,0 +1,36 @@
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/homepagebanner.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--foreground-bright);
+}
+.banner h1 {
+    font-family: 'Spectral', serif;
+    font-size: 75px;
+    margin-bottom: 40px;
+}
+.banner h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.banner button {
+    padding: 13px 20px;
+    border: none;
+    text-transform: uppercase;
+    font-family: 'Asap', sans-serif;
+    background: var(--foreground-bright);
+    font-size: 17px;
+    transition: .4s;
+    border-radius: 10px;
+}
+.banner button:hover {
+    background: var(--foreground-bright-alt);
+    cursor: pointer;
+    transition: .3s;
+}

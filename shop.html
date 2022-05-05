@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="theme-color" content="#967a4a">
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/main.css"> 
+        <link rel="stylesheet" href="assets/css/shop.css">
+        <script src="https://kit.fontawesome.com/1fbf25ad7b.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <title>Shop - CatShop</title>
+    </head>
+    <body>
+        <header>
+            <a class="header" href="index.html">
+                <img src="assets/img/headercat_dark.png">
+                <h1>CatShop</h1>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="underline">Winkelen</a></li>
+                <li><a href="about.html">Over ons</a></li>
+                <button><i class="fa-solid fa-cart-shopping"></i> <span id="cart-count">1</span></button>
+            </ul>
+        </header>
+        <div class="page-title">
+            <h1>Producten</h1>
+            <hr>
+        </div>
+        <div class="products">
+            <div class="catalog-empty">
+                <h1>Niks te zien hier :(</h1>
+                <h3>Als je dit leest, is er iets fout gegaan. Sorry!</h3>
+            </div>
+        </div>
+        <footer>
+            made with <i class="fa-solid fa-heart"></i> by Jake
+        </footer>
+    </body>
+
+    <!-- Put scripts after body so it doesn't initialize too soon -->
+    <script src="assets/js/shopping-cart.js"></script>
+    <script src="assets/js/shop.js"></script>
+
+    <!-- Handlebars template for product -->
+    <script id="product-template" type="text/x-handlebars-template">
+        <div class="product">
+            <img src="assets/img/products/{{id}}.png">
+            <div class="split">
+                <div class="text">
+                    <h1>{{name}}</h1>
+                    <h3>€{{price}}</h3>
+                </div>
+                <button onclick="toggleCart(this, '{{id}}')"><i class="fa-solid {{icon}}"></i></button>
+            </div>
+        </div>
+    </script>
+</html>
