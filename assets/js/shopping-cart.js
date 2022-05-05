@@ -3,11 +3,15 @@ window.__SHOPPING_CART__ = {
     addItem: function(itemId) {
         this.items.push(itemId);
         this.refreshCartButton();
+        document.cookie = `CART=${JSON.stringify(this.items)}`;
+
         console.log(`added ${itemId} to shopping cart`);
     },
     removeItem: function(itemId) {
         this.items.splice(this.items.indexOf(itemId), 1);
         this.refreshCartButton();
+        document.cookie = `CART=${JSON.stringify(this.items)}`;
+
         console.log(`removed ${itemId} to shopping cart`);
     },
     refreshCartButton: function() {
