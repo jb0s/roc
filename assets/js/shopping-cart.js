@@ -18,8 +18,7 @@ window.__SHOPPING_CART__ = {
 var cartData = getCookie("CART");
 if(cartData === undefined) {
     console.log("cart data is undefined, either first time visitor or user is accessing locally which disables cookies.");
-    document.cookie = "CART=['catnip-bellenblaas']";
-    window.__SHOPPING_CART__.items.push("catnip-bellenblaas");
+    document.cookie = "CART=[]";
 }
 else {
     window.__SHOPPING_CART__.items = JSON.parse(cartData);
