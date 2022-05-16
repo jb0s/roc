@@ -5,10 +5,10 @@
         <meta name="theme-color" content="#967a4a">
         <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="assets/css/main.css"> 
-        <link rel="stylesheet" href="assets/css/shop.css">
+        <link rel="stylesheet" href="assets/css/cart.css">
         <script src="https://kit.fontawesome.com/1fbf25ad7b.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-        <title>Winkelen - CatShop</title>
+        <title>Winkelwagentje - CatShop</title>
     </head>
     <body>
         <div class="fader"></div>
@@ -19,29 +19,38 @@
             </a>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html" class="underline">Winkelen</a></li>
+                <li><a href="shop.html">Winkelen</a></li>
                 <li><a href="about.html">Over ons</a></li>
                 <button><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> <span id="cart-count">0</span></a></button>
             </ul>
         </header>
         <div class="page-title">
-            <h1>Producten</h1>
+            <h1>Je winkelwagentje</h1>
             <hr>
         </div>
         <div class="products">
             <div class="catalog-empty">
                 <h1>Niks te zien hier :(</h1>
-                <h3>Als je dit leest, is er iets fout gegaan. Sorry!</h3>
+                <h3>Je hebt niks in je winkelwagentje.</h3>
             </div>
         </div>
-        <footer>
-            made with <i class="fa-solid fa-heart"></i> by Jake
-        </footer>
+        <div class="checkout">
+            <div class="left">
+                <h3 id="totalProductLabel">Totale producten: 0</h1>
+                <h3 id="totalPriceLabel">Totaalprijs: €0,-</h1>
+            </div>
+            <div class="right">
+                <h1>Klaar?</h1>
+
+                <!-- ;) -->
+                <button onclick="window.location = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'">Afrekenen</button>
+            </div>
+        </div>
     </body>
 
     <!-- Put scripts after body so it doesn't initialize too soon -->
     <script src="assets/js/shopping-cart.js"></script>
-    <script src="assets/js/shop.js"></script>
+    <script src="assets/js/cart.js"></script>
 
     <!-- Handlebars template for product -->
     <script id="product-template" type="text/x-handlebars-template">
@@ -52,7 +61,7 @@
                     <h1>{{name}}</h1>
                     <h3>€{{price}}</h3>
                 </div>
-                <button onclick="toggleCart(this, '{{id}}')"><i class="fa-solid {{icon}}"></i></button>
+                <button onclick="removeFromCart('{{id}}')"><i class="fa-solid {{icon}}"></i></button>
             </div>
         </div>
     </script>

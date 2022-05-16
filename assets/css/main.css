@@ -33,11 +33,13 @@ header {
     align-items: center;
     justify-content: space-between;
     color: var(--foreground);
+    z-index: 2;
 }
 
 /* Navbar links */
 header a {
     color: var(--foreground);
+    transition: .3s;
 }
 header ul {
     margin-right: 50px;
@@ -53,6 +55,15 @@ header button {
     border-radius: 7px;
     color: var(--foreground);
     transition: .4s;
+}
+header button:hover {
+    background: var(--foreground);
+    cursor: pointer;
+    transition: .3s;
+}
+header button:hover a {
+    color: var(--background-alt);
+    text-decoration: none;
 }
 header button i {
     margin-right: 5px;
@@ -86,8 +97,20 @@ header.big a {
     color: var(--foreground-bright);
 }
 header.big button {
-    color: var(--foreground-bright);
+    background: var(--foreground-bright);
     border: 2px solid var(--foreground-bright);
+}
+header.big button:hover {
+    background: var(--foreground-bright-alt);
+    border: 2px solid var(--foreground-bright-alt);
+    cursor: pointer;
+    transition: .3s;
+}
+header.big button:hover a {
+    text-decoration: none;
+}
+header.big button a {
+    color: var(--foreground);
 }
 
 /* Page headings */

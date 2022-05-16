@@ -1,0 +1,90 @@
+.products {
+    margin: 30px 10vw;
+    display: flex;
+    flex-grow: 0;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+}
+.product {
+    background: var(--background-alt);
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    animation-duration: 1s;
+    align-items: center;
+}
+.product img {
+    border-radius: 10px;
+    margin-right: 20px;
+    width: 80px;
+    height: 80px;
+}
+.product h1 {
+    font-size: 20px;
+}
+.product .split {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.checkout button,
+.product button {
+    padding: 0 13px;
+    font-size: 17px;
+    border: 2px solid var(--foreground);
+    background: none;
+    border-radius: 7px;
+    color: var(--foreground);
+    transition: .4s;
+}
+.checkout button:hover,
+.product button:hover {
+    background: var(--foreground);
+    color: var(--background-alt);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.catalog-empty {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    margin-top: -10px;
+    font-family: monospace;
+    text-align: center;
+    font-size: 30px;
+    opacity: .5;
+}
+.catalog-empty h3 {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.checkout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.checkout .left {
+    margin-left: 10vw;
+    line-height: 1.5;
+}
+.checkout .right {
+    margin-right: 10vw;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.checkout .right button {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Animations */
+@keyframes shopProductFadeIn {
+    from { transform: scale(.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
